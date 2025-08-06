@@ -450,3 +450,13 @@ function generateWhatsAppMessage(nomeCliente, telefoneCliente) {
     
     return message;
 }
+
+// Função para abrir WhatsApp com mensagem de contato personalizada
+function openWhatsAppContact() {
+    const message = "Olá, gostaria de informações e solicitar um produto da Russo Rústicos personalizado";
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappNumber = '5551984436030';
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+    
+    window.open(whatsappURL, '_blank');
+}
