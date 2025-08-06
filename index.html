@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Russo Rústicos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search,shopping_cart" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+    </style>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <h1 class="titulo">Russo Rústicos</h1>
+        <div class="menu">  
+            <a href="#quem-somos">Quem somos</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#trabalhos">Trabalhos</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/russorusticos?utm_source=ig_web_button_share_sheet&igsh=OWpsMmMwMzd5czF1" target="_blank" class="social-link">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/5551984436030" target="_blank" class="social-link">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </header>
+
+    <div class="filtros">
+        <div class="search-container">
+            <span class="material-symbols-outlined search-icon">search</span>
+            <input type="text" placeholder="Buscar por nome do produto" class="input-busca">
+            <div class="cart-icon-search" onclick="toggleCart()">
+                <span class="material-symbols-outlined">shopping_cart</span>
+            </div>
+        </div> 
+        <div> 
+            <p> Filtrar por categoria: </p>
+            <div class="select-container">
+                <select class="select-categoria">
+                    <option value="todos">Todos</option>
+                    <option value="tabuas">Tabúas</option>
+                    <option value="decoracao">Lareiras</option>
+                    <option value="mesas">Mesas</option>
+                    <option value="iluminacao">Iluminação</option>
+                </select>
+                <span class="select-arrow">▼</span>
+            </div>
+        </div> 
+    </div>
+
+    <section id="produtos">
+       <h2>Produtos</h2>
+       <div>
+           <h2>Tabúas</h2>
+           <div class="product-card">
+               <img src="imagens/3ebb2451-eeb7-4e2b-b179-fab64c649c7d.jpg" alt="Tábua de Pinheiro" class="product-image">
+               <div class="product-info">
+                   <h3 class="product-title">Tábua de Pinheiro</h3>
+                   <p class="product-size">30 x 60 cm</p>
+                   <p class="product-material">Material: Pinheiro</p>
+                   <p class="product-description collapsed" id="desc-1">Tábuas rústicas de madeira de pinheiro feitas à mão, tratadas com óleo mineral, 30 x 60!</p>
+                   <button class="read-more-btn" onclick="toggleDescription('desc-1', this)" style="display: none;">Ler mais</button>
+                   <div class="product-footer">
+                       <span class="product-price">R$ 80,00</span>
+                       <button class="add-to-cart" data-product-id="tabua-pinheiro-1" onclick="addToCart('tabua-pinheiro-1', 'Tábua de Pinheiro', 'R$ 80,00')">
+                           <span class="material-symbols-outlined">shopping_cart</span>
+                       </button>
+                   </div>
+               </div>
+           </div>
+       </div>
+       <div>
+           <h2>Mesas</h2>
+       </div>
+       <div>
+           <h2>Lareiras</h2>
+           <div class="product-card">
+               <img src="imagens/lareira_ecologica_artesanal_com_pes_e_aquecimento_para_sala_de_jantar_4133_6_2c91091fa9c51633023581187ca6485d_20230224000659.webp" alt="Lareira Ecológica à Álcool" class="product-image">
+               <div class="product-info">
+                   <h3 class="product-title">Lareira Ecológica à Álcool</h3>
+                   <p class="product-size">Altura: 60cm | Largura: 60cm | Comprimento: 100cm</p>
+                   <p class="product-material">Material: Carvalho</p>
+                   <p class="product-description collapsed" id="desc-lareira-ecologica-1">
+                       Aquecedor Rústico Ecológico com Pés em Ferro e Tronco de Árvore
+                   </p>
+                   <button class="read-more-btn" onclick="toggleDescription('desc-lareira-ecologica-1', this)" style="display: none;">Ler mais</button>
+                   <div class="product-footer">
+                       <span class="product-price">R$ 200,00</span>
+                       <button class="add-to-cart" data-product-id="lareira-ecologica-1" onclick="addToCart('lareira-ecologica-1', 'Lareira Ecológica à Álcool', 'R$ 200,00')">
+                           <span class="material-symbols-outlined">shopping_cart</span>
+                       </button>
+                   </div>
+               </div>
+           </div>
+       </div>
+       <div>
+           <h2>Luminárias</h2>
+       </div>
+    </section>
+
+    <section id="quem-somos">
+        <h2>Quem somos</h2>
+        <p>A Russo Rústicos se localiza no Rio Grande do Sul e é especializada na criação de peças artesanais em madeira rústica. Cada produto é feito à mão, com alma, tradição e respeito pela natureza. A proposta é transformar troncos e madeiras maciças em itens únicos e cheios de personalidade — como tábuas de carne, lareiras artesanais, mesas centrais, mesinhas, luminárias, lustres e muito mais. As formas naturais da madeira são preservadas e valorizadas, criando produtos exclusivos que combinam funcionalidade, beleza e rusticidade. A Russo Rústicos realiza entregas na região metropolitana de Porto Alegre e também oferece a opção de cotação de frete para envio a outras cidades e estados por transportadora. Ideal para quem busca um toque natural e autêntico na decoração ou no dia a dia.</p>
+    </section>
+
+    <section id="trabalhos">
+        <h2>Trabalhos</h2>
+    </section>
+
+    <!-- Aba do Carrinho -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Meu Carrinho</h3>
+            <button class="cart-close" onclick="toggleCart()">×</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Produtos serão inseridos aqui via JavaScript -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total: <span id="cartTotal">R$ 0,00</span></span>
+            </div>
+            <button class="finalize-order" onclick="openModal()">Finalizar Pedido</button>
+        </div>
+    </div>
+
+    <!-- Overlay para fechar carrinho -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <!-- Modal de Finalização de Compra -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal()"></div>
+    <div class="modal" id="finalizarModal">
+        <div class="modal-header">
+            <h3>Finalizar Pedido</h3>
+            <button class="modal-close" onclick="closeModal()">×</button>
+        </div>
+        <div class="modal-content">
+            <form id="finalizarForm">
+                <div class="form-group">
+                    <label for="nomeCliente">Nome Completo:</label>
+                    <input type="text" id="nomeCliente" name="nomeCliente" placeholder="Digite seu nome completo" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefoneCliente">Telefone de Contato:</label>
+                    <input type="tel" id="telefoneCliente" name="telefoneCliente" placeholder="(51) 99999-9999" required>
+                </div>
+                <button type="submit" class="btn-enviar-whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    Enviar Pedido via WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
