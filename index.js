@@ -254,12 +254,6 @@ document.addEventListener('DOMContentLoaded', function() {
         searchInput.addEventListener('input', filterProducts);
     }
     
-    // Adicionar evento de filtro por categoria
-    const categorySelect = document.querySelector('.select-categoria');
-    if (categorySelect) {
-        categorySelect.addEventListener('change', filterByCategory);
-    }
-    
     // Adicionar event listener para o formulário de finalização
     const finalizarForm = document.getElementById('finalizarForm');
     if (finalizarForm) {
@@ -314,42 +308,6 @@ function filterProducts() {
             }
         }
     });
-}
-
-// Função para filtrar por categoria
-function filterByCategory() {
-    const selectedCategory = document.querySelector('.select-categoria').value;
-    
-    // Encontrar todas as seções de produtos
-    const tabusSection = document.querySelector('section > div:nth-child(2)');
-    const mesasSection = document.querySelector('section > div:nth-child(3)');
-    const lareirasSection = document.querySelector('section > div:nth-child(4)');
-    const luminariasSection = document.querySelector('section > div:nth-child(5)');
-    
-    // Resetar - mostrar todas as seções
-    if (tabusSection) tabusSection.style.display = 'block';
-    if (mesasSection) mesasSection.style.display = 'block';
-    if (lareirasSection) lareirasSection.style.display = 'block';
-    if (luminariasSection) luminariasSection.style.display = 'block';
-    
-    // Filtrar baseado na categoria selecionada
-    if (selectedCategory === 'tabuas') {
-        if (mesasSection) mesasSection.style.display = 'none';
-        if (lareirasSection) lareirasSection.style.display = 'none';
-        if (luminariasSection) luminariasSection.style.display = 'none';
-    } else if (selectedCategory === 'mesas') {
-        if (tabusSection) tabusSection.style.display = 'none';
-        if (lareirasSection) lareirasSection.style.display = 'none';
-        if (luminariasSection) luminariasSection.style.display = 'none';
-    } else if (selectedCategory === 'decoracao') {
-        if (tabusSection) tabusSection.style.display = 'none';
-        if (mesasSection) mesasSection.style.display = 'none';
-        if (luminariasSection) luminariasSection.style.display = 'none';
-    } else if (selectedCategory === 'iluminacao') {
-        if (tabusSection) tabusSection.style.display = 'none';
-        if (mesasSection) mesasSection.style.display = 'none';
-        if (lareirasSection) lareirasSection.style.display = 'none';
-    }
 }
 
 // Funções do Modal de Finalização

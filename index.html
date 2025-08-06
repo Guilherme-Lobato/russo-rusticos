@@ -46,68 +46,44 @@
                 <span class="material-symbols-outlined">shopping_cart</span>
             </div>
         </div> 
-        <div> 
-            <p> Filtrar por categoria: </p>
-            <div class="select-container">
-                <select class="select-categoria">
-                    <option value="todos">Todos</option>
-                    <option value="tabuas">Tabúas</option>
-                    <option value="decoracao">Lareiras</option>
-                    <option value="mesas">Mesas</option>
-                    <option value="iluminacao">Iluminação</option>
-                </select>
-                <span class="select-arrow">▼</span>
-            </div>
-        </div> 
     </div>
 
     <section id="produtos">
        <h2>Produtos</h2>
-       <div>
-           <h2>Tabúas</h2>
-           <div class="product-card">
-               <img src="imagens/3ebb2451-eeb7-4e2b-b179-fab64c649c7d.jpg" alt="Tábua de Pinheiro" class="product-image">
-               <div class="product-info">
-                   <h3 class="product-title">Tábua de Pinheiro</h3>
-                   <p class="product-size">30 x 60 cm</p>
-                   <p class="product-material">Material: Pinheiro</p>
-                   <p class="product-description collapsed" id="desc-1">Tábuas rústicas de madeira de pinheiro feitas à mão, tratadas com óleo mineral, 30 x 60!</p>
-                   <button class="read-more-btn" onclick="toggleDescription('desc-1', this)" style="display: none;">Ler mais</button>
-                   <div class="product-footer">
-                       <span class="product-price">R$ 80,00</span>
-                       <button class="add-to-cart" data-product-id="tabua-pinheiro-1" onclick="addToCart('tabua-pinheiro-1', 'Tábua de Pinheiro', 'R$ 80,00')">
-                           <span class="material-symbols-outlined">shopping_cart</span>
-                       </button>
-                   </div>
+       <div class="product-card">
+           <img src="imagens/3ebb2451-eeb7-4e2b-b179-fab64c649c7d.jpg" alt="Tábua de Pinheiro" class="product-image">
+           <div class="product-info">
+               <h3 class="product-title">Tábua de Pinheiro</h3>
+               <p class="product-size">30 x 60 cm</p>
+               <p class="product-material">Material: Pinheiro</p>
+               <p class="product-description collapsed" id="desc-1">Tábuas rústicas de madeira de pinheiro feitas à mão, tratadas com óleo mineral, 30 x 60!</p>
+               <button class="read-more-btn" onclick="toggleDescription('desc-1', this)" style="display: none;">Ler mais</button>
+               <div class="product-footer">
+                   <span class="product-price">R$ 80,00</span>
+                   <button class="add-to-cart" data-product-id="tabua-pinheiro-1" onclick="addToCart('tabua-pinheiro-1', 'Tábua de Pinheiro', 'R$ 80,00')">
+                       <span class="material-symbols-outlined">shopping_cart</span>
+                   </button>
                </div>
            </div>
        </div>
-       <div>
-           <h2>Mesas</h2>
-       </div>
-       <div>
-           <h2>Lareiras</h2>
-           <div class="product-card">
-               <img src="imagens/lareira_ecologica_artesanal_com_pes_e_aquecimento_para_sala_de_jantar_4133_6_2c91091fa9c51633023581187ca6485d_20230224000659.webp" alt="Lareira Ecológica à Álcool" class="product-image">
-               <div class="product-info">
-                   <h3 class="product-title">Lareira Ecológica à Álcool</h3>
-                   <p class="product-size">Altura: 60cm | Largura: 60cm | Comprimento: 100cm</p>
-                   <p class="product-material">Material: Carvalho</p>
-                   <p class="product-description collapsed" id="desc-lareira-ecologica-1">
-                       Aquecedor Rústico Ecológico com Pés em Ferro e Tronco de Árvore
-                   </p>
-                   <button class="read-more-btn" onclick="toggleDescription('desc-lareira-ecologica-1', this)" style="display: none;">Ler mais</button>
-                   <div class="product-footer">
-                       <span class="product-price">R$ 200,00</span>
-                       <button class="add-to-cart" data-product-id="lareira-ecologica-1" onclick="addToCart('lareira-ecologica-1', 'Lareira Ecológica à Álcool', 'R$ 200,00')">
-                           <span class="material-symbols-outlined">shopping_cart</span>
-                       </button>
-                   </div>
+       
+       <div class="product-card">
+           <img src="imagens/lareira_ecologica_artesanal_com_pes_e_aquecimento_para_sala_de_jantar_4133_6_2c91091fa9c51633023581187ca6485d_20230224000659.webp" alt="Lareira Ecológica à Álcool" class="product-image">
+           <div class="product-info">
+               <h3 class="product-title">Lareira Ecológica à Álcool</h3>
+               <p class="product-size">Altura: 60cm | Largura: 60cm | Comprimento: 100cm</p>
+               <p class="product-material">Material: Carvalho</p>
+               <p class="product-description collapsed" id="desc-lareira-ecologica-1">
+                   Aquecedor Rústico Ecológico com Pés em Ferro e Tronco de Árvore
+               </p>
+               <button class="read-more-btn" onclick="toggleDescription('desc-lareira-ecologica-1', this)" style="display: none;">Ler mais</button>
+               <div class="product-footer">
+                   <span class="product-price">R$ 200,00</span>
+                   <button class="add-to-cart" data-product-id="lareira-ecologica-1" onclick="addToCart('lareira-ecologica-1', 'Lareira Ecológica à Álcool', 'R$ 200,00')">
+                       <span class="material-symbols-outlined">shopping_cart</span>
+                   </button>
                </div>
            </div>
-       </div>
-       <div>
-           <h2>Luminárias</h2>
        </div>
     </section>
 
