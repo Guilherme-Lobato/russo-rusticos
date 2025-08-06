@@ -70,7 +70,7 @@ header {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 15px;
+        gap: 30px;
         width: 100%;
         margin: 0;
         padding: 10px 0;
@@ -101,7 +101,7 @@ header {
     }
     
     header .menu {
-        gap: 10px;
+        gap: 25px;
         flex-wrap: wrap;
         justify-content: center;
         padding: 10px;
@@ -109,12 +109,13 @@ header {
     
     header .menu a {
         font-size: 1em !important;
-        padding: 8px 12px;
-        border-radius: 15px;
-        background-color: rgba(255, 255, 255, 0.1);
-        text-decoration: none;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        margin: 3px;
+        padding: 0;
+        border-radius: 0;
+        background-color: transparent;
+        text-decoration: underline;
+        text-decoration-color: white;
+        border: none;
+        margin: 0;
         display: inline-block;
     }
     
@@ -204,17 +205,20 @@ header .menu a {
 
 @media (max-width: 767px) {
     header .menu a {
-        text-decoration: none;
-        background-color: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        padding: 8px 12px;
-        border-radius: 15px;
+        text-decoration: underline;
+        text-decoration-color: white;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        border-radius: 0;
         font-size: 1.1em;
+        transition: all 0.3s ease;
     }
     
     header .menu a:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-        transform: translateY(-1px);
+        background-color: transparent;
+        transform: none;
+        color: rgba(255, 255, 255, 0.7);
     }
 }
 
