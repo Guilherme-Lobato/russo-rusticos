@@ -53,7 +53,7 @@ async function loadProductsFromSheets() {
                     }
                     
                     if (fileId) {
-                        imagemUrl = `https://drive.google.com/thumbnail?id=${fileId}&sz=w400`;
+                        imagemUrl = `https://drive.google.com/thumbnail?id=${fileId}&sz=w800`;
                     }
                 }
                 
@@ -150,16 +150,18 @@ function showFallbackProducts() {
             nome: 'Tábua Rústica',
             preco: 'R$ 80,00',
             medidas: '30 x 60 cm',
+            material: 'Pinheiro',
             descricao: 'Tábua rústica de madeira artesanal, perfeita para servir.',
-            'link imagem': 'imagens/3ebb2451-eeb7-4e2b-b179-fab64c649c7d.jpg'
+            imagem: 'data:image/svg+xml;charset=utf-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22200%22 style=%22background:%23C4A484%22%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2218%22%3ETábua Rústica%3C/text%3E%3C/svg%3E'
         },
         {
             id: 'fallback-2', 
             nome: 'Lareira Ecológica',
             preco: 'R$ 300,00',
             medidas: '60 x 60 x 100 cm',
+            material: 'Carvalho',
             descricao: 'Lareira ecológica artesanal com design rústico.',
-            'link imagem': 'imagens/3ebb2451-eeb7-4e2b-b179-fab64c649c7d.jpg'
+            imagem: 'data:image/svg+xml;charset=utf-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22200%22 style=%22background:%23C4A484%22%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2218%22%3ELareira%3C/text%3E%3C/svg%3E'
         }
     ];
     
