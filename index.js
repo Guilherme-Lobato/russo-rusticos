@@ -125,12 +125,12 @@ function createProductCard(product) {
             <p class="product-size">${product.medidas}</p>
             <p class="product-material">Material: ${product.material}</p>
             <p class="product-description">${product.descricao}</p>
-            <div class="product-footer">
-                <span class="product-price">${product.preco}</span>
-                <button class="add-to-cart" data-product-id="${product.id}">
-                    <span class="material-symbols-outlined">shopping_cart</span>
-                </button>
-            </div>
+        </div>
+        <div class="product-footer">
+            <span class="product-price">${product.preco}</span>
+            <button class="add-to-cart" data-product-id="${product.id}">
+                <span class="material-symbols-outlined">shopping_cart</span>
+            </button>
         </div>
     `;
     
@@ -237,9 +237,9 @@ function changeCartQuantity(productId, change) {
         cart[productId].quantity = newQuantity;
         totalItems += change;
         
-        const productFooter = document.querySelector(`[onclick*="${productId}"]`)?.closest('.product-footer');
-        if (productFooter && productFooter.querySelector('.quantity-display')) {
-            productFooter.querySelector('.quantity-display').textContent = cart[productId].quantity;
+        const productCard = document.querySelector(`[onclick*="${productId}"]`)?.closest('.product-card');
+        if (productCard && productCard.querySelector('.quantity-display')) {
+            productCard.querySelector('.quantity-display').textContent = cart[productId].quantity;
         }
         
         renderCartItems();
