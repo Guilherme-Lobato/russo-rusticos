@@ -325,27 +325,39 @@ function addToCart(productId, productName, productPrice) {
         <span class="product-price">${productPrice}</span>
         <div class="quantity-controls">
             <button class="quantity-btn minus" onclick="decreaseQuantity('${productId}', '${productPrice}')">-</button>
-            <span class="quantity-display">${cart[productId].quantity}</span>
+            <span class="quantity-display" id="quantity-${productId}">${cart[productId].quantity}</span>
             <button class="quantity-btn plus" onclick="increaseQuantity('${productId}', '${productPrice}')">+</button>
         </div>
     `;
     
     updateCartCounter();
     updateCartTotal();
+    
+    // Forçar atualização do display após qualquer mudança
+    updateQuantityDisplay(productId);
+}
+
+// Função auxiliar para atualizar o display da quantidade
+function updateQuantityDisplay(productId) {
+    // Buscar o display específico pelo ID único
+    const quantityDisplay = document.getElementById(`quantity-${productId}`);
+    
+    if (quantityDisplay && cart[productId]) {
+        quantityDisplay.textContent = cart[productId].quantity;
+    }
 }
 
 // Função para aumentar quantidade
 function increaseQuantity(productId, productPrice) {
+    if (!cart[productId]) return;
+    
     const maxQuantity = cart[productId].maxQuantity;
     
     if (cart[productId].quantity < maxQuantity) {
         cart[productId].quantity++;
         totalItems++;
         
-        const productFooter = document.querySelector(`[data-product-id="${productId}"]`).closest('.product-footer');
-        const quantityDisplay = productFooter.querySelector('.quantity-display');
-        quantityDisplay.textContent = cart[productId].quantity;
-        
+        updateQuantityDisplay(productId);
         updateCartCounter();
         updateCartTotal();
     } else {
@@ -355,35 +367,51 @@ function increaseQuantity(productId, productPrice) {
 
 // Função para diminuir quantidade
 function decreaseQuantity(productId, productPrice) {
+    if (!cart[productId]) return;
+    
     if (cart[productId].quantity > 1) {
         cart[productId].quantity--;
         totalItems--;
         
-        const productFooter = document.querySelector(`[data-product-id="${productId}"]`).closest('.product-footer');
-        const quantityDisplay = productFooter.querySelector('.quantity-display');
-        quantityDisplay.textContent = cart[productId].quantity;
+        // Atualizar o display da quantidade
+        updateQuantityDisplay(productId);
+        
+        updateCartCounter();
+        updateCartTotal();
     } else {
         const productName = cart[productId].name;
         
         delete cart[productId];
         totalItems--;
         
-        const productFooter = document.querySelector(`[data-product-id="${productId}"]`).closest('.product-footer');
-        productFooter.innerHTML = `
-            <span class="product-price">${productPrice}</span>
-            <button class="add-to-cart" data-product-id="${productId}">
-                <span class="material-symbols-outlined">shopping_cart</span>
-            </button>
-        `;
+        // Buscar o card do produto e resetar o footer
+        const productCards = document.querySelectorAll('.product-card');
+        for (let card of productCards) {
+            const button = card.querySelector(`[data-product-id="${productId}"]`);
+            if (button) {
+                const productFooter = card.querySelector('.product-footer');
+                if (productFooter) {
+                    productFooter.innerHTML = `
+                        <span class="product-price">${productPrice}</span>
+                        <button class="add-to-cart" data-product-id="${productId}">
+                            <span class="material-symbols-outlined">shopping_cart</span>
+                        </button>
+                    `;
+                    
+                    const addButton = productFooter.querySelector('.add-to-cart');
+                    if (addButton) {
+                        addButton.addEventListener('click', () => {
+                            addToCart(productId, productName, productPrice);
+                        });
+                    }
+                }
+                break;
+            }
+        }
         
-        const addButton = productFooter.querySelector('.add-to-cart');
-        addButton.addEventListener('click', () => {
-            addToCart(productId, productName, productPrice);
-        });
+        updateCartCounter();
+        updateCartTotal();
     }
-    
-    updateCartCounter();
-    updateCartTotal();
 }
 
 // Função para atualizar contador do carrinho
