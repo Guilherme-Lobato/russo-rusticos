@@ -1,35 +1,14 @@
 body {
-    background: linear-gradient(
-        135deg,
-        #2C2C2C 0%,
-        #3A3A3A 25%,
-        #4A4A4A 50%,
-        #3A3A3A 75%,
-        #2C2C2C 100%
-    );
+    background: linear-gradient(135deg, #2C2C2C 0%, #3A3A3A 25%, #4A4A4A 50%, #3A3A3A 75%, #2C2C2C 100%);
     min-height: 100vh;
     margin: 0;
     padding: 0 15px;
     overflow-x: hidden;
 }
 
-@media (min-width: 768px) {
-    body {
-        padding: 0 60px;
-    }
-}
-
-@media (min-width: 1024px) {
-    body {
-        padding: 0 120px;
-    }
-}
-
-@media (min-width: 1200px) {
-    body {
-        padding: 0 180px;
-    }
-}
+@media (min-width: 768px) { body { padding: 0 60px; } }
+@media (min-width: 1024px) { body { padding: 0 120px; } }
+@media (min-width: 1200px) { body { padding: 0 180px; } }
 
 header {
     display: grid;
@@ -168,10 +147,7 @@ header .menu {
 }
 
 @media (min-width: 768px) {
-    header .menu {
-        grid-column: 2;
-        justify-self: center;
-    }
+    header .menu { grid-column: 2; justify-self: center; }
 }
 
 header .social-icons {
@@ -183,10 +159,7 @@ header .social-icons {
 }
 
 @media (min-width: 768px) {
-    header .social-icons {
-        grid-column: 3;
-        justify-self: end;
-    }
+    header .social-icons { grid-column: 3; justify-self: end; }
 }
 
 header .menu a {
@@ -414,8 +387,8 @@ section p {
 
 .product-image {
     width: 100%;
-    max-width: 200px;
-    height: 140px;
+    max-width: 260px;
+    height: 180px;
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 15px;
@@ -423,8 +396,8 @@ section p {
 
 @media (min-width: 768px) {
     .product-image {
-        max-width: 240px;
-        height: 160px;
+        max-width: 300px;
+        height: 200px;
     }
 }
 
@@ -992,11 +965,8 @@ section p {
     box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
 }
 
-.btn-enviar-whatsapp i {
-    font-size: 20px;
-}
+.btn-enviar-whatsapp i { font-size: 20px; }
 
-/* Responsivo do Modal */
 @media (max-width: 480px) {
     .modal {
         width: 95%;
@@ -1014,34 +984,19 @@ section p {
     }
     
     .modal-header,
-    .modal-content {
-        padding: 20px;
-    }
+    .modal-content { padding: 20px; }
     
-    .form-group input {
-        padding: 12px;
-        font-size: 16px;
-    }
+    .form-group input { padding: 12px; font-size: 16px; }
     
-    .btn-enviar-whatsapp {
-        padding: 12px;
-        font-size: 16px;
-    }
+    .btn-enviar-whatsapp { padding: 12px; font-size: 16px; }
 }
 
 @media (max-width: 390px) {
-    .modal {
-        width: 98%;
-        max-height: 80vh;
-        border-radius: 12px;
-    }
+    .modal { width: 98%; max-height: 80vh; border-radius: 12px; }
     
-    .modal-header {
-        padding: 15px;
-    }
+    .modal-header { padding: 15px; }
     
-    .modal-header h3 {
-        font-size: 20px;
+    .modal-header h3 { font-size: 20px; }
     }
     
     .modal-content {

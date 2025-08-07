@@ -7,17 +7,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search,shopping_cart" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <style>
-    .material-symbols-outlined {
-      font-variation-settings:
-      'FILL' 0,
-      'wght' 400,
-      'GRAD' 0,
-      'opsz' 24
-    }
-    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search,shopping_cart">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }</style>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -45,51 +37,25 @@
             <div class="cart-icon-search" onclick="toggleCart()">
                 <span class="material-symbols-outlined">shopping_cart</span>
             </div>
-        </div> 
+        </div>
     </div>
 
     <section id="produtos">
        <h2>Produtos</h2>
-       <div class="product-card">
-           <img src="imagens/3ebb2451-eeb7-4e2b-b179-fab64c649c7d.jpg" alt="Tábua de Pinheiro" class="product-image">
-           <div class="product-info">
-               <h3 class="product-title">Tábua de Pinheiro</h3>
-               <p class="product-size">30 x 60 cm</p>
-               <p class="product-material">Material: Pinheiro</p>
-               <p class="product-description collapsed" id="desc-1">Tábuas rústicas de madeira de pinheiro feitas à mão, tratadas com óleo mineral, 30 x 60!</p>
-               <button class="read-more-btn" onclick="toggleDescription('desc-1', this)" style="display: none;">Ler mais</button>
-               <div class="product-footer">
-                   <span class="product-price">R$ 80,00</span>
-                   <button class="add-to-cart" data-product-id="tabua-pinheiro-1" onclick="addToCart('tabua-pinheiro-1', 'Tábua de Pinheiro', 'R$ 80,00')">
-                       <span class="material-symbols-outlined">shopping_cart</span>
-                   </button>
-               </div>
-           </div>
-       </div>
-       
-       <div class="product-card">
-           <img src="imagens/lareira_ecologica_artesanal_com_pes_e_aquecimento_para_sala_de_jantar_4133_6_2c91091fa9c51633023581187ca6485d_20230224000659.webp" alt="Lareira Ecológica à Álcool" class="product-image">
-           <div class="product-info">
-               <h3 class="product-title">Lareira Ecológica à Álcool</h3>
-               <p class="product-size">Altura: 60cm | Largura: 60cm | Comprimento: 100cm</p>
-               <p class="product-material">Material: Carvalho</p>
-               <p class="product-description collapsed" id="desc-lareira-ecologica-1">
-                   Aquecedor Rústico Ecológico com Pés em Ferro e Tronco de Árvore
-               </p>
-               <button class="read-more-btn" onclick="toggleDescription('desc-lareira-ecologica-1', this)" style="display: none;">Ler mais</button>
-               <div class="product-footer">
-                   <span class="product-price">R$ 200,00</span>
-                   <button class="add-to-cart" data-product-id="lareira-ecologica-1" onclick="addToCart('lareira-ecologica-1', 'Lareira Ecológica à Álcool', 'R$ 200,00')">
-                       <span class="material-symbols-outlined">shopping_cart</span>
-                   </button>
-               </div>
-           </div>
-       </div>
+       <!-- Produtos serão carregados dinamicamente da planilha via JavaScript -->
     </section>
 
     <section id="quem-somos">
         <h2>Quem somos</h2>
-        <p>A Russo Rústicos se localiza no Rio Grande do Sul e é especializada na criação de peças artesanais em madeira rústica. Cada produto é feito à mão, com alma, tradição e respeito pela natureza. A proposta é transformar troncos e madeiras maciças em itens únicos e cheios de personalidade — como tábuas de carne, lareiras artesanais, mesas centrais, mesinhas, luminárias, lustres e muito mais. As formas naturais da madeira são preservadas e valorizadas, criando produtos exclusivos que combinam funcionalidade, beleza e rusticidade. A Russo Rústicos realiza entregas na região metropolitana de Porto Alegre e também oferece a opção de cotação de frete para envio a outras cidades e estados por transportadora. Ideal para quem busca um toque natural e autêntico na decoração ou no dia a dia.</p>
+        <p>A Russo Rústicos se localiza no Rio Grande do Sul e é especializada na criação de peças artesanais em madeira rústica. Cada produto é feito à mão, com alma, tradição e respeito pela natureza.</p>
+        
+        <p>A proposta é transformar troncos e madeiras maciças em itens únicos e cheios de personalidade — como tábuas de carne, lareiras artesanais, mesas centrais, mesinhas, luminárias, lustres e muito mais.</p>
+        
+        <p>As formas naturais da madeira são preservadas e valorizadas, criando produtos exclusivos que combinam funcionalidade, beleza e rusticidade.</p>
+        
+        <p>A Russo Rústicos realiza entregas na região metropolitana de Porto Alegre e também oferece a opção de cotação de frete para envio a outras cidades e estados por transportadora.</p>
+        
+        <p><strong>Ideal para quem busca um toque natural e autêntico na decoração ou no dia a dia.</strong></p>
     </section>
 
     <section id="trabalhos">
